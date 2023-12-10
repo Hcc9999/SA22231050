@@ -1,0 +1,17 @@
+Package: SA22231050
+Type: Package
+Title: Functions and examples of final work in 'Statistical Computing' course
+Version: 1.0
+Date: 2023-12-05
+Author: Chen Huang
+Maintainer: Chen Huang <huangchen@mail.ustc.edu.cn>
+Description: Several R and Rcpp function are included in this package for illustration. 
+License: GPL (>= 2)
+Imports: Rcpp, microbenchmark
+Suggests: knitr, rmarkdown, cramer, DAAG, boot, bootstrap
+LinkingTo: Rcpp
+RoxygenNote: 7.2.3
+Encoding: UTF-8
+VignetteBuilder: knitr
+URL: http://github.com/Hcc9999/SA22231050
+BugReports: http://github.com/Hcc9999/SA22231050/issues

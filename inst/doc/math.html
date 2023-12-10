@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="SA22231050" />
+
+
+<title>Math</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+
+<style type="text/css">
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Math</h1>
+<h4 class="author">SA22231050</h4>
+<h4 class="date">2023.12.05</h4>
+
+
+
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>The objective of this assignment was to familiarise myself with the
+use of Rcpp through the final assignment, which implemented two simple
+numerical methods, Newton’s method for root finding and bisection to
+find the target value. Only the most basic functions were
+implemented.</p>
+</div>
+<div id="二分法求目标值" class="section level2">
+<h2>二分法求目标值</h2>
+<p>比较目标数和数组的中间数的大小，然后将数组中的数据不断分为两份，从而判断目标数据应该处于数组的左半段还是右半段</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co">#R实现</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>bisection <span class="ot">&lt;-</span> <span class="cf">function</span>(x,  target) {</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>  l <span class="ot">=</span> <span class="dv">1</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>  r <span class="ot">=</span> <span class="fu">length</span>(x)</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>  iter_n <span class="ot">=</span> <span class="dv">0</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>  </span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>  ITER_UPPER <span class="ot">=</span> <span class="dv">500</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>  iter_n <span class="ot">=</span> <span class="dv">0</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>  </span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>  <span class="cf">while</span> (<span class="cn">TRUE</span>) {</span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>    iter_n <span class="ot">=</span> iter_n <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a>    mid <span class="ot">=</span> (l <span class="sc">+</span> r) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>    mid <span class="ot">=</span> <span class="fu">floor</span>(mid)</span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a>    <span class="cf">if</span> (iter_n <span class="sc">&gt;</span> ITER_UPPER) {</span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a>      <span class="fu">stop</span>(<span class="st">&#39;not found solution&#39;</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a>    }</span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a>    mid_val <span class="ot">=</span> x[mid]</span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a>    <span class="cf">if</span> (mid_val <span class="sc">&lt;</span> target) {</span>
+<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a>      l <span class="ot">=</span> mid<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (mid_val <span class="sc">&gt;</span> target) {</span>
+<span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a>      r <span class="ot">=</span> mid<span class="dv">-1</span></span>
+<span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb1-23"><a href="#cb1-23" tabindex="-1"></a>      <span class="fu">return</span> (mid)</span>
+<span id="cb1-24"><a href="#cb1-24" tabindex="-1"></a>    }</span>
+<span id="cb1-25"><a href="#cb1-25" tabindex="-1"></a>  }</span>
+<span id="cb1-26"><a href="#cb1-26" tabindex="-1"></a>  <span class="fu">return</span>(<span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb1-27"><a href="#cb1-27" tabindex="-1"></a>}</span>
+<span id="cb1-28"><a href="#cb1-28" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>)</span>
+<span id="cb1-29"><a href="#cb1-29" tabindex="-1"></a><span class="fu">bisection</span>(x, <span class="dv">15</span>)</span>
+<span id="cb1-30"><a href="#cb1-30" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" tabindex="-1"></a><span class="co">#c++</span></span>
+<span id="cb1-32"><a href="#cb1-32" tabindex="-1"></a><span class="fu">library</span>(Rcpp)</span>
+<span id="cb1-33"><a href="#cb1-33" tabindex="-1"></a><span class="fu">cppFunction</span>(<span class="at">code=</span><span class="st">&#39;</span></span>
+<span id="cb1-34"><a href="#cb1-34" tabindex="-1"></a><span class="st">int binarySearchC(NumericVector x, double target) {</span></span>
+<span id="cb1-35"><a href="#cb1-35" tabindex="-1"></a><span class="st">  int low = 0;                  </span></span>
+<span id="cb1-36"><a href="#cb1-36" tabindex="-1"></a><span class="st">  int high = x.size() - 1;      </span></span>
+<span id="cb1-37"><a href="#cb1-37" tabindex="-1"></a><span class="st">  </span></span>
+<span id="cb1-38"><a href="#cb1-38" tabindex="-1"></a><span class="st">  while (low &lt;= high) {</span></span>
+<span id="cb1-39"><a href="#cb1-39" tabindex="-1"></a><span class="st">    int mid = (low + high) / 2; </span></span>
+<span id="cb1-40"><a href="#cb1-40" tabindex="-1"></a><span class="st">    double midVal = x[mid];     </span></span>
+<span id="cb1-41"><a href="#cb1-41" tabindex="-1"></a><span class="st">    </span></span>
+<span id="cb1-42"><a href="#cb1-42" tabindex="-1"></a><span class="st">    if (midVal &lt; target) {</span></span>
+<span id="cb1-43"><a href="#cb1-43" tabindex="-1"></a><span class="st">      low = mid + 1;            </span></span>
+<span id="cb1-44"><a href="#cb1-44" tabindex="-1"></a><span class="st">    } else if (midVal &gt; target) {</span></span>
+<span id="cb1-45"><a href="#cb1-45" tabindex="-1"></a><span class="st">      high = mid - 1;           </span></span>
+<span id="cb1-46"><a href="#cb1-46" tabindex="-1"></a><span class="st">    } else {</span></span>
+<span id="cb1-47"><a href="#cb1-47" tabindex="-1"></a><span class="st">      return mid+1;               </span></span>
+<span id="cb1-48"><a href="#cb1-48" tabindex="-1"></a><span class="st">    }</span></span>
+<span id="cb1-49"><a href="#cb1-49" tabindex="-1"></a><span class="st">  }</span></span>
+<span id="cb1-50"><a href="#cb1-50" tabindex="-1"></a><span class="st">&#39;</span>)</span>
+<span id="cb1-51"><a href="#cb1-51" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>)</span>
+<span id="cb1-53"><a href="#cb1-53" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">binarySearchC</span>(x, <span class="at">target =</span> <span class="dv">15</span>)</span>
+<span id="cb1-54"><a href="#cb1-54" tabindex="-1"></a><span class="fu">print</span>(result)</span>
+<span id="cb1-55"><a href="#cb1-55" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" tabindex="-1"></a><span class="co">#速度比较</span></span>
+<span id="cb1-57"><a href="#cb1-57" tabindex="-1"></a><span class="fu">library</span>(microbenchmark)</span>
+<span id="cb1-58"><a href="#cb1-58" tabindex="-1"></a>tm1 <span class="ot">&lt;-</span> microbenchmark<span class="sc">::</span><span class="fu">microbenchmark</span>(</span>
+<span id="cb1-59"><a href="#cb1-59" tabindex="-1"></a>   <span class="at">rnR =</span> <span class="fu">bisection</span>(<span class="at">x =</span> <span class="fu">seq</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>), <span class="dv">15</span>),</span>
+<span id="cb1-60"><a href="#cb1-60" tabindex="-1"></a>   <span class="at">rnC =</span> <span class="fu">binarySearchC</span>(NumericVector <span class="at">x =</span> <span class="fu">seq</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>), <span class="at">target =</span> <span class="dv">15</span>)</span>
+<span id="cb1-61"><a href="#cb1-61" tabindex="-1"></a>)</span>
+<span id="cb1-62"><a href="#cb1-62" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">summary</span>(tm1)[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>)])</span></code></pre></div>
+</div>
+<div id="牛顿法" class="section level2">
+<h2>牛顿法</h2>
+<p>基本牛顿法是一种是用导数的算法，它每一步的迭代方向都是沿着当前点函数值下降的方向。</p>
+<p><span class="math display">\[
+f\left(x\right)=f\left(x_{k}\right)+f^{\prime}\left(x_{k}\right)\left(x-x_{k}\right)+\frac12f^{\prime\prime}\left(x_{k}\right)\left(x-x_{k}\right)^{2}
+\]</span> 对上式求导并令其为0，则为 <span class="math display">\[
+f^{\prime}\left(x_{k}\right)+f^{\prime\prime}\left(x_{k}\right)(x-x_{k})=0
+\]</span> 即得到 <span class="math display">\[x=x_{k}-\frac{f^{\prime}\left(x_{k}\right)}{f^{\prime\prime}\left(x_{k}\right)}\]</span></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co">#R</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>newton <span class="ot">&lt;-</span> <span class="cf">function</span>(f, f1, x0, tol, <span class="at">max_iter =</span> <span class="dv">1000</span>) {</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>  x <span class="ot">=</span> x0</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>  f <span class="ot">=</span> <span class="fu">f</span>(x)</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>  f1 <span class="ot">=</span> <span class="fu">f1</span>(x)</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>  iter <span class="ot">=</span> <span class="dv">0</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>  <span class="cf">while</span> (<span class="cn">TRUE</span>) {</span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>    <span class="cf">if</span> (f1 <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>      <span class="fu">stop</span>(<span class="st">&quot;The derivative is 0&quot;</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>    }</span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>    x <span class="ot">=</span> x <span class="sc">-</span> f <span class="sc">/</span> f1</span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>    f <span class="ot">=</span> <span class="fu">f</span>(x)</span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>    f1 <span class="ot">=</span> <span class="fu">f1</span>(x)</span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a>    iter <span class="ot">=</span> iter <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a>    <span class="cf">if</span> ((<span class="fu">abs</span>(x <span class="sc">-</span> x0) <span class="sc">&lt;</span> tol)) {</span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a>      <span class="fu">return</span>(<span class="fu">c</span>(x, iter))</span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a>    }</span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a>    x0 <span class="ot">=</span> x </span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a>    <span class="cf">if</span> (iter <span class="sc">&gt;</span> max_iter) {</span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a>      <span class="fu">stop</span>(<span class="st">&quot;cannot find solution&quot;</span>)</span>
+<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a>    }</span>
+<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a>  }</span>
+<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a>}</span>
+<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a>ans <span class="ot">&lt;-</span> <span class="fu">newton</span>(<span class="at">f =</span> <span class="cf">function</span>(x) x<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">4</span>, <span class="at">f1 =</span> <span class="cf">function</span>(x) <span class="dv">2</span><span class="sc">*</span>x, <span class="at">x0 =</span> <span class="sc">-</span><span class="dv">5</span>, <span class="at">tol =</span> <span class="fl">1e-6</span>)</span>
+<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a><span class="co">#c++</span></span>
+<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a><span class="fu">library</span>(Rcpp)</span>
+<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a><span class="fu">cppFunction</span>(<span class="at">code=</span><span class="st">&#39;</span></span>
+<span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a><span class="st">double f(double x) {</span></span>
+<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a><span class="st">   return x*x-4;</span></span>
+<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a><span class="st">}</span></span>
+<span id="cb2-34"><a href="#cb2-34" tabindex="-1"></a><span class="st">&#39;</span>)</span>
+<span id="cb2-35"><a href="#cb2-35" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" tabindex="-1"></a><span class="fu">cppFunction</span>(<span class="at">code=</span><span class="st">&#39;</span></span>
+<span id="cb2-37"><a href="#cb2-37" tabindex="-1"></a><span class="st">double f_prime(double x) {</span></span>
+<span id="cb2-38"><a href="#cb2-38" tabindex="-1"></a><span class="st">   return 2*x;</span></span>
+<span id="cb2-39"><a href="#cb2-39" tabindex="-1"></a><span class="st">}</span></span>
+<span id="cb2-40"><a href="#cb2-40" tabindex="-1"></a><span class="st">&#39;</span>)</span>
+<span id="cb2-41"><a href="#cb2-41" tabindex="-1"></a><span class="fu">cppFunction</span>(<span class="at">code=</span><span class="st">&#39;</span></span>
+<span id="cb2-42"><a href="#cb2-42" tabindex="-1"></a><span class="st">double newtonMethodC(double x0, double tol, int max_iter) {</span></span>
+<span id="cb2-43"><a href="#cb2-43" tabindex="-1"></a><span class="st">  double x = x0;                 </span></span>
+<span id="cb2-44"><a href="#cb2-44" tabindex="-1"></a><span class="st">  double fx = f(x);  </span></span>
+<span id="cb2-45"><a href="#cb2-45" tabindex="-1"></a><span class="st">  double fpx = f_prime(x);  </span></span>
+<span id="cb2-46"><a href="#cb2-46" tabindex="-1"></a><span class="st">  int iter = 0;               </span></span>
+<span id="cb2-47"><a href="#cb2-47" tabindex="-1"></a><span class="st">  </span></span>
+<span id="cb2-48"><a href="#cb2-48" tabindex="-1"></a><span class="st">  while (fabs(fx) &gt; tol &amp;&amp; iter &lt; max_iter) {</span></span>
+<span id="cb2-49"><a href="#cb2-49" tabindex="-1"></a><span class="st">    x = x - fx / fpx;         </span></span>
+<span id="cb2-50"><a href="#cb2-50" tabindex="-1"></a><span class="st">    fx = f(x);      </span></span>
+<span id="cb2-51"><a href="#cb2-51" tabindex="-1"></a><span class="st">    fpx = f_prime(x);  </span></span>
+<span id="cb2-52"><a href="#cb2-52" tabindex="-1"></a><span class="st">    iter++;                    </span></span>
+<span id="cb2-53"><a href="#cb2-53" tabindex="-1"></a><span class="st">  }</span></span>
+<span id="cb2-54"><a href="#cb2-54" tabindex="-1"></a><span class="st">  </span></span>
+<span id="cb2-55"><a href="#cb2-55" tabindex="-1"></a><span class="st">  return x;                    </span></span>
+<span id="cb2-56"><a href="#cb2-56" tabindex="-1"></a><span class="st">}</span></span>
+<span id="cb2-57"><a href="#cb2-57" tabindex="-1"></a><span class="st">&#39;</span>)</span>
+<span id="cb2-58"><a href="#cb2-58" tabindex="-1"></a>x0 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">9</span></span>
+<span id="cb2-59"><a href="#cb2-59" tabindex="-1"></a>tol <span class="ot">&lt;-</span> <span class="fl">1e-6</span></span>
+<span id="cb2-60"><a href="#cb2-60" tabindex="-1"></a>max_iter <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb2-61"><a href="#cb2-61" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">newtonMethodC</span>(x0, tol, max_iter)</span>
+<span id="cb2-62"><a href="#cb2-62" tabindex="-1"></a><span class="fu">print</span>(result)</span></code></pre></div>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
